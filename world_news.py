@@ -30,14 +30,32 @@ SOURCES = [
     ("NHK ニュース", "https://www3.nhk.or.jp/rss/news/cat0.xml", "일본어", "일본", 36.2, 138.3),
     ("朝日新聞", "https://www.asahi.com/rss/asahi/newsheadlines.rdf", "일본어", "일본", 36.2, 138.3),
     ("NPR World", "https://feeds.npr.org/1004/rss.xml", "영어", "미국", 38.9, -77.0),
-    ("BBC World", "https://feeds.bbci.co.uk/news/world/rss.xml", "영어", "영국", 51.5, -0.1),
+    ("BBC World", "https://feeds.bbci.co.uk/news/world/rss.xml", "영어", "영국", 54.0, -2.0),
     ("Al Jazeera", "https://www.aljazeera.com/xml/rss/all.xml", "영어", "카타르", 25.3, 51.5),
-    ("BBC Mundo", "https://feeds.bbci.co.uk/mundo/rss.xml", "스페인어", "영국", 51.5, -0.1),
-    ("El País", "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada", "스페인어", "스페인", 40.4, -3.7),
-    ("BBC 中文", "https://feeds.bbci.co.uk/zhongwen/simp/rss.xml", "중국어", "영국", 51.5, -0.1),
+    ("BBC Mundo", "https://feeds.bbci.co.uk/mundo/rss.xml", "스페인어", "영국", 54.0, -2.0),
+    ("El País", "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada", "스페인어", "스페인", 39.5, -3.7),
+    ("BBC 中文", "https://feeds.bbci.co.uk/zhongwen/simp/rss.xml", "중국어", "영국", 54.0, -2.0),
     ("人民网", "http://www.people.com.cn/rss/world.xml", "중국어", "중국", 35.9, 104.2),
-    ("Le Monde", "https://www.lemonde.fr/rss/une.xml", "프랑스어", "프랑스", 46.6, 2.4),
-    ("France 24", "https://www.france24.com/fr/rss", "프랑스어", "프랑스", 46.6, 2.4),
+    ("ABC News Australia", "https://www.abc.net.au/news/feed/51120/rss.xml", "영어", "호주", -35.3, 149.1),
+    ("RNZ", "https://www.rnz.co.nz/rss/world.xml", "영어", "뉴질랜드", -41.3, 174.8),
+    ("CBC News", "https://www.cbc.ca/webfeed/rss/rss-world", "영어", "캐나다", 45.4, -75.7),
+    ("연합뉴스", "https://www.yna.co.kr/rss/news.xml", "한국어", "한국", 37.6, 127.0),
+    ("Yonhap English", "https://en.yna.co.kr/RSS/news.xml", "영어", "한국", 37.6, 127.0),
+    ("Fox News", "https://moxie.foxnews.com/google-publisher/world.xml", "영어", "미국", 38.9, -77.0),
+    ("조선일보", "https://www.chosun.com/arc/outboundfeeds/rss/?outputType=xml", "한국어", "한국", 37.6, 127.0),
+    ("동아일보", "https://rss.donga.com/total.xml", "한국어", "한국", 37.6, 127.0),
+    ("TASS", "https://tass.com/rss/v2.xml", "영어", "러시아", 55.75, 37.6),
+    ("Lenta.ru", "https://lenta.ru/rss/news", "러시아어", "러시아", 55.75, 37.6),
+    ("Times of Israel", "https://www.timesofisrael.com/feed/", "영어", "이스라엘", 31.8, 35.2),
+    ("Jerusalem Post", "https://www.jpost.com/rss/rssfeedsheadlines.aspx", "영어", "이스라엘", 31.8, 35.2),
+    ("El Universal", "https://www.eluniversal.com.mx/rss.xml", "스페인어", "멕시코", 19.4, -99.1),
+    ("La Jornada", "https://www.jornada.com.mx/rss/edicion.xml?v=1", "스페인어", "멕시코", 19.4, -99.1),
+    ("The Hindu", "https://www.thehindu.com/news/international/feeder/default.rss", "영어", "인도", 28.6, 77.2),
+    ("Times of India", "https://timesofindia.indiatimes.com/rssfeedstopstories.cms", "영어", "인도", 28.6, 77.2),
+    ("Tagesschau", "https://www.tagesschau.de/index~rss2.xml", "독일어", "독일", 52.5, 13.4),
+    ("Deutsche Welle", "https://rss.dw.com/xml/rss-de-all", "독일어", "독일", 52.5, 13.4),
+    ("Le Monde", "https://www.lemonde.fr/rss/une.xml", "프랑스어", "프랑스", 47.0, 2.5),
+    ("France 24", "https://www.france24.com/fr/rss", "프랑스어", "프랑스", 47.0, 2.5),
 ]
 
 LANG_INFO = {  # 번역 코드, 네이버 사전 주소
@@ -45,6 +63,9 @@ LANG_INFO = {  # 번역 코드, 네이버 사전 주소
     "영어": ("en", "https://en.dict.naver.com/#/search?query="),
     "스페인어": ("es", "https://es.dict.naver.com/#/search?query="),
     "중국어": ("zh-CN", "https://zh.dict.naver.com/#/search?query="),
+    "한국어": ("ko", "https://ko.dict.naver.com/#/search?query="),
+    "러시아어": ("ru", "https://ru.dict.naver.com/#/search?query="),
+    "독일어": ("de", "https://de.dict.naver.com/#/search?query="),
     "프랑스어": ("fr", "https://fr.dict.naver.com/#/search?query="),
 }
 
@@ -80,7 +101,7 @@ def fetch_feed(url, limit):
             if name == "title":
                 d["title"] = strip_tags(ch.text)
             elif name in ("description", "summary", "content") and not d["summary"]:
-                d["summary"] = strip_tags(ch.text)[:300]
+                d["summary"] = strip_tags(ch.text)[:400]
             elif name == "link":
                 d["link"] = (ch.text or ch.attrib.get("href", "")).strip()
             elif name in ("pubDate", "published", "updated", "date"):
@@ -102,10 +123,12 @@ def make_translator():
     def tr(text, src):
         if not text:
             return ""
-        try:
-            return GoogleTranslator(source=src, target="ko").translate(text)
-        except Exception:
-            return ""
+        for _ in range(2):
+            try:
+                return GoogleTranslator(source=src, target="ko").translate(text) or ""
+            except Exception:
+                continue
+        return ""
 
     return tr
 
@@ -516,7 +539,7 @@ header h1{margin:0;font-size:18px} header small{color:var(--mut)}
 .zb{position:absolute;right:8px;top:8px;display:flex;flex-direction:column;gap:4px}
 .zb button{width:30px;height:30px;border:1px solid var(--bd);background:var(--card);color:var(--fg);border-radius:6px;cursor:pointer;font-size:16px}
 .pinc{cursor:pointer}.pinc circle{fill:var(--ac);stroke:#fff;stroke-width:1.5}.pinc.sel circle{fill:#d9480f}
-.pinc text{fill:#fff;font-size:11px;font-weight:700;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.pinc text{fill:#fff;font-size:10px;font-weight:700;text-anchor:middle;dominant-baseline:central;pointer-events:none}
 .row{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
 .pin{width:30px;height:30px;border-radius:50%;background:var(--ac);color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.4)}
 .pin.sel{background:#d9480f}
@@ -528,6 +551,10 @@ article{background:var(--card);border:1px solid var(--bd);border-radius:10px;pad
 .kobtn{background:none;border:1px solid var(--bd);color:var(--ac);border-radius:6px;padding:3px 10px;cursor:pointer;font-size:12px}
 .ko{display:none;margin-top:8px;font-size:14px;line-height:1.5}.ko.show{display:block}
 .hint{font-size:13px;color:var(--mut);margin:6px 0}
+.search{flex:1;min-width:220px;padding:9px 12px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--fg);font-size:14px}
+.chk{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--mut);cursor:pointer}
+.kobox{margin-top:8px;padding:8px 10px;border-left:3px solid var(--ac);background:rgba(127,127,127,.08);border-radius:0 6px 6px 0}
+.kot{font-weight:600;font-size:14px;line-height:1.45}.kos{font-size:13px;color:var(--mut);line-height:1.5;margin-top:3px}
 #pop{position:absolute;display:none;z-index:9999;background:#d9480f;color:#fff;border:0;border-radius:6px;padding:6px 10px;font-size:13px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.35)}
 #toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#222;color:#fff;padding:8px 16px;border-radius:20px;font-size:13px;display:none;z-index:99999}
 table{width:100%;border-collapse:collapse;font-size:14px}
@@ -546,7 +573,9 @@ a{color:var(--ac)}
 
 <div class="wrap" id="vNews">
   <div id="map"></div>
-  <div class="hint">핀을 누르면 그 나라 기사만 나와. 휠/+−로 확대, 드래그로 이동. 기사 속 단어를 드래그하면 "단어장에 저장" 버튼이 떠.</div>
+  <div class="hint">핀을 누르면 그 나라 기사만 나와. 휠/+−로 확대, 드래그로 이동. 기사 속 외국어 단어를 드래그하면 "단어장에 저장" 버튼이 떠.</div>
+  <div class="row"><input id="q" class="search" placeholder="기사 검색 (제목·요약·번역 모두 검색, 예: 외교, trade, 日本)"><label class="chk"><input type="checkbox" id="koOn" checked> 한국어 번역 표시</label></div>
+  <div class="hint" id="cnt"></div>
   <div class="row" id="langChips"></div>
   <div class="row" id="countryChips"></div>
   <div id="list"></div>
@@ -616,7 +645,7 @@ function checkSel(){
     if(!w || w.length>60 || !sel.rangeCount){ pop.style.display='none'; return; }
     const n = sel.anchorNode && (sel.anchorNode.nodeType===1 ? sel.anchorNode : sel.anchorNode.parentElement);
     const art = n && n.closest('article[data-i]');
-    if(!art){ pop.style.display='none'; return; }
+    if(!art || n.closest('.kobox')){ pop.style.display='none'; return; }
     const a = ARTICLES[+art.dataset.i];
     pending = {word:w, lang:a.lang, context:a.title, link:a.link, memo:'', date:new Date().toISOString().slice(0,10)};
     const r = sel.getRangeAt(0).getBoundingClientRect();
@@ -636,12 +665,16 @@ pop.onclick = ()=>{
 };
 
 /* ---------- 뉴스 + 지도 ---------- */
-let selLang = null, selCountry = null;
+let selLang = null, selCountry = null, q = '', showKo = true;
 const LANGS = [...new Set(ARTICLES.map(a=>a.lang))];
 
+function match(a){
+  if(!q) return true;
+  return (a.title+' '+a.summary+' '+(a.ko_title||'')+' '+(a.ko_summary||'')+' '+a.source).toLowerCase().includes(q);
+}
 function filtered(ignoreCountry){
   return ARTICLES.map((a,i)=>({a,i})).filter(({a})=>
-    (!selLang || a.lang===selLang) && (ignoreCountry || !selCountry || a.country===selCountry));
+    (!selLang || a.lang===selLang) && match(a) && (ignoreCountry || !selCountry || a.country===selCountry));
 }
 function renderChips(){
   const lc = $('#langChips'); lc.textContent='';
@@ -693,7 +726,7 @@ function renderMap(){
     const p = COUNTRIES[c];
     const x=(p[1]+180)*3, y=(90-p[0])*3;
     const g=document.createElementNS(NS,'g'); g.setAttribute('class','pinc'+(selCountry===c?' sel':'')); g.dataset.x=x; g.dataset.y=y;
-    const ci=document.createElementNS(NS,'circle'); ci.setAttribute('r',13); g.appendChild(ci);
+    const ci=document.createElementNS(NS,'circle'); ci.setAttribute('r',11); g.appendChild(ci);
     const tx=document.createElementNS(NS,'text'); tx.textContent=counts[c]; g.appendChild(tx);
     const ti=document.createElementNS(NS,'title'); ti.textContent=c; g.appendChild(ti);
     g.addEventListener('click',()=>{ selCountry=(selCountry===c?null:c); refresh(); });
@@ -704,6 +737,7 @@ function renderMap(){
 function renderList(){
   const box = $('#list'); box.textContent='';
   const items = filtered(false);
+  $('#cnt').textContent = (q ? '검색 결과 ' : '기사 ') + items.length + '건';
   if(!items.length){ box.appendChild(el('p','hint','기사가 없어.')); return; }
   let lastSrc = null;
   items.forEach(({a,i})=>{
@@ -712,13 +746,13 @@ function renderList(){
     const t = el('a','t',a.title); t.href=a.link; t.target='_blank'; t.rel='noopener';
     art.appendChild(t);
     if(a.summary) art.appendChild(el('p','s',a.summary));
-    if(a.date) art.appendChild(el('div','meta',a.date));
-    if(a.ko_title){
-      const kb = el('button','kobtn','한국어 보기'); const k = el('div','ko');
-      k.appendChild(el('b',null,a.ko_title)); k.appendChild(document.createElement('br')); k.appendChild(document.createTextNode(a.ko_summary||''));
-      kb.onclick = ()=>k.classList.toggle('show');
-      art.appendChild(kb); art.appendChild(k);
+    if(a.ko_title && showKo){
+      const k = el('div','kobox');
+      k.appendChild(el('div','kot',a.ko_title));
+      if(a.ko_summary) k.appendChild(el('div','kos',a.ko_summary));
+      art.appendChild(k);
     }
+    if(a.date) art.appendChild(el('div','meta',a.date));
     box.appendChild(art);
   });
 }
@@ -727,6 +761,8 @@ function refresh(){ renderChips(); renderMap(); renderList(); }
 $('#nNews').onclick = ()=>{ $('#vNews').classList.remove('hide'); $('#vVocab').classList.add('hide'); $('#nNews').classList.add('on'); $('#nVocab').classList.remove('on'); };
 $('#nVocab').onclick = ()=>{ $('#vVocab').classList.remove('hide'); $('#vNews').classList.add('hide'); $('#nVocab').classList.add('on'); $('#nNews').classList.remove('on'); renderVocab(); };
 
+$('#q').addEventListener('input',e=>{ q=e.target.value.trim().toLowerCase(); refresh(); });
+$('#koOn').onchange = e=>{ showKo=e.target.checked; renderList(); };
 saveVocab(); refresh();
 </script></body></html>"""
 
@@ -747,10 +783,20 @@ def main():
         code = LANG_INFO[lang][0]
         for it in fetch_feed(url, args.per_feed):
             it.update(source=name, lang=lang, country=country)
-            if tr:
-                it["ko_title"] = tr(it["title"], code)
-                it["ko_summary"] = tr(it["summary"], code)
             articles.append(it)
+
+    if tr:
+        from concurrent.futures import ThreadPoolExecutor
+        todo = [a for a in articles if LANG_INFO[a["lang"]][0] != "ko"]
+        print(f"\n번역 중... ({len(todo)}개)")
+
+        def work(a):
+            c = LANG_INFO[a["lang"]][0]
+            a["ko_title"] = tr(a["title"], c)
+            a["ko_summary"] = tr(a["summary"], c)
+
+        with ThreadPoolExecutor(max_workers=6) as ex:
+            list(ex.map(work, todo))
 
     payload = {
         "articles": articles,
@@ -770,5 +816,7 @@ def main():
         webbrowser.open(out.as_uri())
 
 
+if __name__ == "__main__":
+    main()
 if __name__ == "__main__":
     main()
